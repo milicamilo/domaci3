@@ -99,14 +99,19 @@ body{
   text-decoration: none;
   float:left;
 }
+.footer {
+  position: sticky;
+  top: 100vh;
+  z-index: 0;
+  background-color: #47bcd4;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 30px;
+}
 
-.footer{
-  bottom: 0;
-    height: 100px;
-    width: 100%;
-    z-index: 999;
-    background-color: #47bcd4;
-    color: black;
+.love:hover {
+  color: red;
 }
 
 .hide {

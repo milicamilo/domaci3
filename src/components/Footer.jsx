@@ -1,10 +1,12 @@
 import React from 'react'
+import { FaHeart } from "react-icons/fa";
 
 function Footer() {
   return (
     <div className="footer">
-        <h1>OVO JE FUTERRR</h1>
-        <p>tu ce biti kontakt!!!</p>
+      <h3>
+        Made with <FaHeart className="love" />
+      </h3>
     </div>
   )
 }
