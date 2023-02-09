@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import Omiljeno from './components/Omiljeno';
+import DodajNoviSlatkis from './components/DodajNoviSlatkis';
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -81,6 +82,14 @@ function App() {
     setFav(favProduct);
   }
   
+  let duzinaNiza = products.length;
+
+  function handleDodaj(userData) {
+    let noviProduct = products;
+    noviProduct[noviProduct.length] = userData;
+    setProducts(noviProduct);
+  }
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -93,16 +102,15 @@ function App() {
           path="/omiljeno"
           element={<Omiljeno products={fav} removeFavourite = {removeFavourite}/>}
         /> 
-        {/* <Route
-          path="/novaigra"
+         <Route
+          path="/novislatkis"
           element={
-            <DodajNovuIgricu
-              // handleInput={handleInput}
-              // handleDodaj={handleDodaj}
-              // duzinaNiza={duzinaNiza}
+            <DodajNoviSlatkis
+              handleDodaj={handleDodaj}
+              duzinaNiza={duzinaNiza}
             />
           }
-        /> */}
+        /> 
       </Routes>
       <Footer />
     </BrowserRouter>

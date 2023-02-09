@@ -16,8 +16,8 @@ function Navbar() {
         <Link to="/omiljeno" className="nav-link">
           Omiljeni kolaci
         </Link>
-        <Link to="/novikolac" className="nav-link">
-          Dodaj novi kolac
+        <Link to="/novislatkis" className="nav-link">
+          Dodaj novi slatkis
         </Link>
       </div>
     </nav>
