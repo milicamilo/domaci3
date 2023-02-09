@@ -1,9 +1,13 @@
 import React from "react";
 import { FaTrashAlt, FaRegStar, FaStar } from "react-icons/fa";
+import { useState } from "react";
 
 function ProductCard({ product, addFavourite, removeFavourite, inFav }) {
+  
+  const [hide, setHide] = useState(false);
+  
   return (
-    <div className="card">
+    <div className={hide == false ? "card" : "hide"}>
       <div className="card-header">
         <img src={product.slika} alt="logo"></img>
       </div>
@@ -22,7 +26,7 @@ function ProductCard({ product, addFavourite, removeFavourite, inFav }) {
             <button type="button" className="btn btn-custom tag-pink" onClick={() => addFavourite(product.id)}>
               {product.favourite ? <FaStar /> : <FaRegStar />}
             </button>
-            <button type="button" className="btn btn-custom tag-blue">
+            <button type="button" className="btn btn-custom tag-blue" onClick={() => {setHide(true);}}>
               <FaTrashAlt />
             </button>
             </>

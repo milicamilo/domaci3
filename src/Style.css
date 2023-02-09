@@ -108,3 +108,15 @@ body{
     background-color: #47bcd4;
     color: black;
 }
+
+.hide {
+  display: none;
+}
+
+.sortiranje {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 20%;
+  font-size: 17px;
+  font-weight: 600;
+}
