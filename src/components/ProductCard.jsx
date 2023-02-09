@@ -1,9 +1,7 @@
 import React from "react";
-import { ImPencil } from "react-icons/im";
-import { IoTrashSharp } from "react-icons/io5";
-import { HiPlus, HiTrash } from "react-icons/hi";
+import { FaTrashAlt, FaRegStar, FaStar } from "react-icons/fa";
 
-function ProductCard({ product }) {
+function ProductCard({ product, addFavourite, removeFavourite, inFav }) {
   return (
     <div className="card">
       <div className="card-header">
@@ -19,15 +17,18 @@ function ProductCard({ product }) {
         </p>
 
         <div>
-          <button type="button" className="btn btn-custom tag-pink">
-            <HiPlus />
-          </button>
-          <button type="button" className="btn btn-custom tag-lavanda">
-            <ImPencil />
-          </button>
-          <button type="button" className="btn btn-custom tag-blue">
-            <HiTrash />
-          </button>
+          { !inFav ? (
+            <>
+            <button type="button" className="btn btn-custom tag-pink" onClick={() => addFavourite(product.id)}>
+              {product.favourite ? <FaStar /> : <FaRegStar />}
+            </button>
+            <button type="button" className="btn btn-custom tag-blue">
+              <FaTrashAlt />
+            </button>
+            </>
+          ) : (<button type="button" className="btn btn-custom tag-pink" onClick={() => removeFavourite(product.id)}>
+              <FaTrashAlt />
+          </button>)}
         </div>
       </div>
     </div>

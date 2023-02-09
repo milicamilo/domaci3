@@ -1,21 +1,27 @@
 import React from 'react';
 import logo from '../images/bombona.png';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-custom">
-        <a className="navbar-brand" href="" >
-            <img src={logo} width="auto" height="30" className="d-inline-block align-center" alt=""></img>
-              Poslasticarica <strong><i> Slatkisi</i></strong>
-        </a> 
-        <div>
-            <a className="nav-link" href="">Pocetna</a>
-            <a className="nav-link" href="">Dodaj novi kolac</a>  
-            <a className="nav-link" href="">Odjava</a>
-        </div>
-
+    <nav className="navbar navbar-custom" id="header">
+      <Link to="/" className="navbar-brand">
+        <img src={logo} width="auto" height="30" className="d-inline-block align-center" alt=""></img>
+        Poslasticarnica <strong><i> Slatkisi</i></strong>
+      </Link>
+      <div>
+        <Link to="/" className="nav-link">
+          Pocetna
+        </Link>
+        <Link to="/omiljeno" className="nav-link">
+          Omiljeni kolaci
+        </Link>
+        <Link to="/novikolac" className="nav-link">
+          Dodaj novi kolac
+        </Link>
+      </div>
     </nav>
-  )
+  );
 }
 
 export default Navbar
