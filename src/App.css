@@ -229,7 +229,8 @@
   .btn {
     display: inline-block;
     line-height: 40px;
-    padding: 0 33px;
+    width: 40px;
+    padding: 10px;
     font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
     cursor: pointer;
     color: #fff;
